@@ -1,0 +1,2 @@
+define(["js/globaldata","underscore","jquery"],function(r,t,a){var e={},n=function(){var r=a(".international-meta"),t=(r.data("redirectpath"),r.data("urlmap"));a(".countries-body a").each(function(){for(var r=a(this),e=r.attr("href").toLowerCase(),n=0;n<t.length;n++)if(e.substr(0,t[n].url.length)==t[n].url.toLowerCase()){r.attr("href",t[n].sessionurl);break}})};return n(),e});
+//# sourceMappingURL=international.js.map

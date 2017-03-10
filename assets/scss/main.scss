@@ -1,1 +1,636 @@
+@import 'core.min';
+@import 'style';
+@import 'style_add';
+@import 'template_styles';
 
+
+
+.rr-widget {
+  font-family: Arial;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  outline: none;
+  .widgettitle {
+    font: 25px/35px 'ITCAvantGardeGothicW10', 'Arial', sans-serif;
+
+    margin: 0 0 40px 0;
+
+    text-align: center;
+    letter-spacing: .5px;
+
+    color: #232323;
+  }
+  .items {
+    display: table;
+
+    width: 100%;
+    padding: 0;
+  }
+  .item {
+    position: relative;
+
+    display: inline-block;
+    float: left;
+
+    width: 20%;
+
+    list-style: none;
+
+    text-align: center;
+    .block {
+      padding: 15px;
+
+      border: 1px solid transparent;
+    }
+    &:hover .block {
+      border-color: #ccc;
+    }
+  }
+}
+
+.item-label {
+  font: 9px/11px 'ITCAvantGardeGothicW10 Demi Bold', 'Arial', sans-serif;
+
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  padding: 2px 4px 1px 4px;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: #000;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: -6px;
+
+    display: inline;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+
+    border-style: solid;
+    border-color: #000 transparent transparent #000;
+    border-top-width: 7px;
+    border-right-width: 3px;
+    border-bottom-width: 7px;
+    border-left-width: 3px;
+  }
+}
+
+.rr-widget {
+  .item-image {
+    line-height: 180px;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 180px;
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      margin: 0 auto;
+
+      vertical-align: middle;
+    }
+  }
+  a.item-info {
+    text-decoration: none;
+  }
+  .item-title {
+    font: 14px/16px 'ITCAvantGardeGothicW10 Demi Bold', 'Arial', sans-serif;
+    font-weight: normal;
+
+    overflow: hidden;
+
+    height: 43px;
+    margin: 5px 0;
+    margin-bottom: 10px;
+    padding: 0 0 10px;
+
+    text-align: center;
+    letter-spacing: 0;
+
+    color: #232323;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.item-block-price {
+  margin-bottom: 10px;
+}
+
+.rr-widget {
+  .item-old-price {
+    font: 12px/19px 'AvantGardeGothicITC W10 Bold', 'Arial', sans-serif;
+    font-weight: normal;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    text-decoration: line-through;
+    letter-spacing: 0;
+
+    color: #666;
+  }
+  .item-new-price {
+    font: 12px/19px 'AvantGardeGothicITC W10 Bold', 'Arial', sans-serif;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    letter-spacing: 0;
+
+    color: #e21836;
+  }
+  .item-price {
+    font: 12px/19px 'AvantGardeGothicITC W10 Bold', 'Arial', sans-serif;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    letter-spacing: 0;
+
+    color: #666;
+  }
+}
+
+.item-price-currency {
+  font-family: 'Rouble' !important;
+
+  color: inherit;
+}
+
+.rr-widget .item-actions {
+  line-height: 27px;
+
+  display: none;
+
+  width: 100%;
+  margin-top: 5px;
+  .item-actions-more {
+    font-size: 15px;
+    font-weight: normal;
+
+    display: inline-block;
+
+    text-decoration: underline;
+
+    color: #0079bf;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::after {
+      content: 'Подробнее';
+    }
+  }
+  .item-actions-buy {
+    font-size: 15px;
+    font-weight: bold;
+
+    display: inline-block;
+
+    margin-left: 20px;
+    padding: 5px 10px;
+
+    text-align: center;
+
+    color: #fff;
+    border-radius: 4px;
+    background-color: #388e3c;
+    &:hover {
+      background-color: #489e4c;
+    }
+    &::after {
+      content: 'Купить';
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .rr-widget .item {
+    width: 33%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .rr-widget .item {
+    width: 50%;
+  }
+}
+
+#rr-500popup-message span {
+  font-family: 'Circe Regular', Sans-Serif;
+  font-size: 16px;
+  line-height: 105%;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  color: #515151;
+}
+
+#rr-500popup .rr-error {
+  border-color: red;
+}
+
+#rr-500popup-message {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+
+  width: 500px;
+  padding: 40px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #e21836;
+  background-color: #fff;
+  .retailrocket-close-message {
+    font-size: 20px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.retailrocket-subscribe-widget {
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  form.retailrocket-subscribe-form {
+    .retailrocket-subscribe-info,
+    .retailrocket-subscribe-input-checkbox {
+      color: #232323;
+    }
+  }
+}
+
+.retailrocket-subscribe-input-text {
+  position: relative;
+  &:after,
+  &:before {
+    position: absolute;
+    top: 0;
+
+    display: block;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+
+    border-style: solid;
+  }
+  &:after {
+    right: -18px;
+
+    border-width: 36px 18px 0 0;
+    border-color: #000 transparent transparent;
+  }
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-text #rr-500popup-email {
+  font-size: 15px;
+
+  display: block;
+
+  height: 36px;
+  padding: 11.5px 48px 11.5px 15px;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  color: #fff;
+  border: 0;
+  background: #000;
+}
+
+.retailrocket-subscribe-input-text:before {
+  left: -18px;
+
+  border-width: 0 0 36px 18px;
+  border-color: transparent transparent #000;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form {
+  .retailrocket-subscribe-input-submit {
+    position: relative;
+    #rr-500popup-btn {
+      font-size: 15px;
+
+      display: block;
+
+      height: 36px;
+
+      cursor: pointer;
+      text-decoration: none;
+
+      color: #fff;
+      border: 0;
+      background-color: #e21836;
+    }
+    &:before {
+      left: -18px;
+
+      border-width: 0 0 36px 18px;
+      border-color: transparent transparent #e21836;
+    }
+    &:after,
+    &:before {
+      position: absolute;
+      top: 0;
+
+      display: block;
+
+      width: 0;
+      height: 0;
+
+      content: '';
+
+      border-style: solid;
+    }
+    &:after {
+      right: -18px;
+
+      border-width: 36px 18px 0 0;
+      border-color: #e21836 transparent transparent;
+    }
+  }
+  a.retailrocket-close {
+    line-height: 31px;
+
+    color: #232323;
+  }
+}
+
+.retailrocket input[type=checkbox] {
+  display: block;
+  float: left;
+
+  margin-top: 4px;
+  margin-right: 5px;
+
+  vertical-align: middle;
+}
+
+.retailrocket-subscribe-widget {
+  .retailrocket-subscribe-input-checkbox {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    label {
+      display: table;
+    }
+  }
+  .retailrocket-subscribe-info {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  font-size: 15px;
+}
+
+.retailrocket-theme form.retailrocket-subscribe-form a.retailrocket-close {
+  line-height: 31px;
+
+  color: #fff;
+}
+
+.retailrocket-notify-widget {
+  .retailrocket-widget {
+    background-color: #fff;
+  }
+  .retailrocket-widgettitle {
+    position: relative;
+    span {
+      font-family: 'Trebuchet MS';
+      font-size: 16px;
+      font-weight: 400;
+
+      position: relative;
+      left: -4px;
+
+      display: inline;
+
+      margin: 0;
+      padding: 0 10px;
+
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+
+      color: #000;
+    }
+  }
+  .widgettitle {
+    font: 25px/35px ITCAvantGardeGothicW10, Arial, sans-serif;
+
+    padding: 20px 0;
+
+    text-align: center;
+    letter-spacing: .5px;
+
+    color: #232323;
+  }
+  .items {
+    display: table;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .item {
+    position: relative;
+
+    display: inline-block;
+    float: left;
+
+    width: 240px;
+
+    list-style: none;
+
+    text-align: center;
+    .block {
+      padding: 15px;
+
+      border: 1px solid transparent;
+    }
+    &:hover .block {
+      border-color: #ccc;
+    }
+  }
+  .item-label {
+    font: 9px/11px 'ITCAvantGardeGothicW10 Demi Bold', Arial, sans-serif;
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    padding: 2px 4px 1px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #fff;
+    background: #000;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: -6px;
+
+      display: inline;
+
+      width: 0;
+      height: 0;
+
+      content: '';
+
+      border-width: 7px 3px;
+      border-style: solid;
+      border-color: #000 transparent transparent #000;
+    }
+  }
+  .item-image {
+    line-height: 180px;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 180px;
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      margin: 0 auto;
+
+      vertical-align: middle;
+    }
+  }
+  a.item-info {
+    text-decoration: none;
+  }
+  .item-title {
+    font: 14px/16px 'ITCAvantGardeGothicW10 Demi Bold', Arial, sans-serif;
+    font-weight: 400;
+
+    overflow: hidden;
+
+    height: 43px;
+    margin: 5px 0;
+    margin-bottom: 10px;
+    padding: 0 0 10px;
+
+    text-align: center;
+    letter-spacing: 0;
+
+    color: #232323;
+    border-bottom: 1px solid #ccc;
+  }
+  .item-block-price {
+    margin-bottom: 10px;
+  }
+  .item-old-price {
+    font: 12px/19px 'AvantGardeGothicITC W10 Bold', Arial, sans-serif;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    text-decoration: line-through;
+    letter-spacing: 0;
+
+    color: #666;
+  }
+  .item-price {
+    font: 12px/19px 'AvantGardeGothicITC W10 Bold', Arial, sans-serif;
+
+    display: inline-block;
+
+    margin-bottom: 0;
+
+    letter-spacing: 0;
+
+    color: #666;
+  }
+  .item-price-currency {
+    font-family: 'Rouble' !important;
+
+    color: inherit;
+  }
+  .item-actions {
+    line-height: 27px;
+
+    display: none;
+
+    width: 100%;
+    margin-top: 5px;
+    .item-actions-more {
+      font-size: 15px;
+      font-weight: 400;
+
+      display: inline-block;
+
+      text-decoration: underline;
+
+      color: #0079bf;
+      &:hover {
+        text-decoration: underline;
+      }
+      &::after {
+        content: 'Подробнее';
+      }
+    }
+    .item-actions-buy {
+      font-size: 15px;
+      font-weight: 700;
+
+      display: inline-block;
+
+      margin-left: 20px;
+      padding: 5px 10px;
+
+      text-align: center;
+
+      color: #fff;
+      border-radius: 4px;
+      background-color: #388e3c;
+      &:hover {
+        background-color: #489e4c;
+      }
+      &::after {
+        content: 'Купить';
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .retailrocket-subscribe-widget .retailrocket-subscribe-form > :first-child {
+    width: 100%;
+    margin: 0 !important;
+
+    text-align: right;
+  }
+}
