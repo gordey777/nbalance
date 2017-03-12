@@ -1,0 +1,80 @@
+.clear {clear: both}
+table.cnss-social-icon tr td, table.cnss-social-icon, table.cnss-social-icon tr {padding:0 !important;margin:0 !important;border:none !important;vertical-align:middle !important;background:none !important;}
+table.cnss-social-icon tr td img{max-width:100% !important;}
+table.cnss-social-icon tr td a img, table.cnss-social-icon tr td a:hover img, table.cnss-social-icon tr td a img:hover{border:none !important;}
+table.cnss-social-icon tr td a img:hover, table.cnss-social-icon tr td a:hover img{max-width:100% !important;}
+ul.cnss-social-icon{margin:0; padding:0;list-style-type:none}
+ul.cnss-social-icon li a img{display:inherit!important;}
+ul.cnss-social-icon li a{border:none!important;text-decoration:none!important;}
+ul.cnss-social-icon li:after, ul.cnss-social-icon li:before{display:none!important;content:inherit!important;}
+ul.cnss-social-icon li{vertical-align: middle; float:none!important; width:auto!important; margin:0!important; list-style-type:none!important;border:none!important;padding:0!important;background: none!important; line-height: normal!important;}
+ul.cnss-social-icon li a,ul.cnss-social-icon li a img{box-shadow: none!important; -webkit-box-shadow:none;}
+/* font-awesome-icons-settings */
+ul.cnss-social-icon li.cn-fa-icon a{display: block!important; text-align: center!important; -webkit-transition: width 0.5s!important; transition: all 0.5s!important;box-sizing: border-box!important;background-color:#999999!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-dropbox{background-color:#007ee5!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-foursquare{background-color:#f94877!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google-plus {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google-plus-circle {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google-plus-official {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google-plus-square {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google-wallet {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-google {background-color:#dc4a38!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-internet-explorer{background-color:#0078d7!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-pinterest {background-color:#cb1f27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-pinterest-p {background-color:#cb1f27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-pinterest-square {background-color:#cb1f27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-slideshare {background-color:#0ca8aa!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-trello{background-color:#0079bf!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-windows{background-color:#0078d7!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-yelp{background-color:#d32323!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-youtube{background-color:#e62f27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-youtube-square{background-color:#e62f27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-apple{background-color:#333333!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-bluetooth{background-color:#0082fc!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-drupal{background-color:#0073ba!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-facebook{background-color:#3b5998!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-facebook-f{background-color:#3b5998!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-facebook-official{background-color:#3b5998!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-facebook-square{background-color:#3b5998!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-html5{background-color:#e34c26!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-medium {background-color:#00ab6c!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-opera{background-color:#f71a2b!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-quora {background-color:#b92b27!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-reddit {background-color:#ff4500!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-spotify{background-color:#1ed760!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-twitter{background-color:#1da1f2!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-twitter-square{background-color:#1da1f2!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-vine {background-color:#00b386!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-wordpress {background-color:#00a0d2!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-xing{background-color:#005d5e!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-xing-square{background-color:#005d5e!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-yahoo{background-color:#4102b0!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-css3{background-color:#0c73b8!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-digg{background-color:#1b5891!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-edge {background-color:#2c74be!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-etsy{background-color:#f56400!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-joomla{background-color:#ed1c40!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-skype{background-color:#00aff0!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-tumblr{background-color:#36465d!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-tumblr-square{background-color:#36465d!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-whatsapp {background-color:#2ab200!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-android{background-color:#77c159!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-behance{background-color:#005cff!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-behance-square{background-color:#005cff!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-dribbble {background-color:#e04c86!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-expeditedssl{background-color:#000000!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-forumbee {background-color:#86ac2f!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-get-pocket{background-color:#e84352!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-hacker-news{background-color:#ff6600!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-linkedin{background-color:#0177b5!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-linkedin-square{background-color:#0177b5!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-maxcdn {background-color:#ff5b02!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-vimeo {background-color:#00b3ec!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-vimeo-square {background-color:#aad450!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-github {background-color:#000000!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-github-square {background-color:#000000!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-git {background-color:#f14e32!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-git-square {background-color:#f14e32!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-rss {background-color:#ff6600!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-instagram{background-color:#405de6!important;}
+ul.cnss-social-icon li.cn-fa-icon a.cnss-tripadvisor{background-color:#589442!important;}

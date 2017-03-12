@@ -1,37 +1,120 @@
 <?php get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php if( get_field('title_bg') ) { ?>
+      <div class="site__title"  style="background-image: url(<?php the_field('title_bg'); ?>);">
+    <?php }
+    else { ?>
+      <div class="site__title"  style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/bg_content.jpg);">
+    <?php } ?>
+      <div>
+        <div class="row">
+          <div class="small-12 columns">
+            <h1><?php the_title(); ?></h1>
+            <h6></h6>
+            <h6><?php the_time('d F, Y'); ?></h6>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <h1 class="single-title inner-title"><?php the_title(); ?></h1>
-      <?php if ( has_post_thumbnail()) :?>
-        <a class="single-thumb" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-          <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-        </a>
-      <?php endif; ?><!-- /post thumbnail -->
+    <div class="index__social">
+      <div class="social">
+        <div>
+          <span class="social__label">Поделиться</span>
+        </div>
 
-      <span class="date"><?php the_time('d F Y'); ?> <?php the_time('H:i'); ?></span>
-      <span class="author"><?php _e( 'Published by', 'wpeasy' ); ?> <?php the_author_posts_link(); ?></span>
-      <span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'wpeasy' ), __( '1 Comment', 'wpeasy' ), __( '% Comments', 'wpeasy' )); ?></span><!-- /post details -->
+        <?php
+        $attr = array (
 
-      <?php the_content(); ?>
 
-      <?php the_tags( __( 'Tags: ', 'wpeasy' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+            'display' => 'horizontal',
+            'alignment' => 'center',
+            'attr_id' => 'before_content_icons',
+            'attr_class' => 'before_content_soc_icons',
+            'selected_icons' => array ( '1', '2', '3', '4', '5', '6', '7', '8' )
 
-      <p><?php _e( 'Categorised in: ', 'wpeasy' ); the_category(', '); // Separated by commas ?></p>
+        );
+        if ( function_exists('cn_social_icon') ) echo cn_social_icon( $attr );
+        ?>
 
-      <p><?php _e( 'This post was written by ', 'wpeasy' ); the_author(); ?></p>
+      </div>
+    </div><!-- /.index__social -->
 
-      <?php edit_post_link(); ?>
+    <div class="content row fixed-width-narrow">
+      <div class="small-12 columns">
+        <?php edit_post_link(); ?>
+        <div class="content__text">
+            <?php the_content(); ?>
+        </div>
 
-      <?php comments_template(); ?>
+      </div>
+    </div>
+    <div class="index__news">
 
-    </article>
+      <?php $category = get_the_category(); ?>
+
+      <h5><?php echo $category[0]->cat_name; ?></h5>
+
+      <div id="news-owl-carousel" class="swiper-container slider--fw swiper-container-horizontal owl-carousel" style="cursor: -webkit-grab;">
+    <?php $categories = get_the_category($post->ID);
+    if ($categories) {
+     $category_ids = array();
+     foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+     $args=array(
+     'category__in' => $category_ids,
+     'orderby'=>date,
+     'post__not_in' => array($post->ID),
+     'showposts'=>99,
+     'caller_get_posts'=>1);
+     $my_query = new wp_query($args);
+     if( $my_query->have_posts() ) {
+
+            while ($my_query->have_posts()) {
+                $my_query->the_post();
+            ?>
+          <div class="slide-content-wrapper">
+            <div class="slide-background-image">
+              <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                <?php if ( has_post_thumbnail()) :
+                  the_post_thumbnail('medium');
+                else: ?>
+                  <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+                <?php endif; ?>
+              </a><!-- /post thumbnail -->
+            </div>
+            <div class="slide-content">
+              <h5><?php the_title(); ?></h5>
+              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span>УЗНАТЬ БОЛЬШЕ</span></a>
+            </div>
+            <div class="slide-date"><?php the_time('j F, Y'); ?></div>
+          </div>
+            <?php
+            }
+
+        }
+    wp_reset_query();
+    }
+    ?>
+
+
+
+
+    </div><!-- /.index__news -->
+
+  </div>
+</div>
+
   <?php endwhile; else: ?>
-    <article>
+    <div class="content row fixed-width-narrow">
+      <div class="small-12 columns">
+        <div class="content__text">
+          <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
+        </div>
 
-      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
+      </div>
+    </div>
 
-    </article>
   <?php endif; ?>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -4,6 +4,64 @@
 @import 'template_styles';
 
 
+//CUSTOM STYLES EASY SOCIAL ICONS
+#before_content_icons {
+  margin: 0 !important;
+  padding: 0 !important;
+  .cn-fa-icon {
+    a {
+      width: 25px !important;
+      height: 25px !important;
+      margin: 2px !important;
+      padding: 3px !important;
+
+      color: #fff;
+      border-radius: 50% !important;
+      background: #d8d8d8 !important;
+      &:hover {
+        background: #e21836 !important;
+      }
+      i {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+//FOOTER WIDGETS
+
+.footer_widget {
+  h6 {
+    font: 14px/45px 'ITCAvantGardeGothicW10','Arial',sans-serif;
+    line-height: 19px;
+
+    position: relative;
+
+    height: 45px;
+    height: auto;
+    margin: 0 0 16px;
+    padding: 0;
+
+    cursor: pointer;
+    text-align: left;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+
+    color: #fff;
+  }
+  ul {
+    display: block;
+
+    height: auto;
+    padding: 0;
+
+    background-color: transparent;
+    .sub-menu {
+      display: none;
+    }
+  }
+}
+
 
 .rr-widget {
   font-family: Arial;
@@ -630,6 +688,447 @@
   .retailrocket-subscribe-widget .retailrocket-subscribe-form > :first-child {
     width: 100%;
     margin: 0 !important;
+
+    text-align: right;
+  }
+}
+
+
+//Single page
+#rr-500popup-message span {
+  font-family: 'Circe Regular', Sans-Serif;
+  font-size: 16px;
+  line-height: 105%;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  color: #515151;
+}
+
+#rr-500popup .rr-error {
+  border-color: red;
+}
+
+#rr-500popup-message {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+
+  width: 500px;
+  padding: 40px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #e21836;
+  background-color: #fff;
+}
+
+#rr-500popup-message .retailrocket-close-message {
+  font-size: 20px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-info {
+  color: #232323;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-checkbox {
+  color: #232323;
+}
+
+.retailrocket-subscribe-widget {
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.retailrocket-subscribe-input-text {
+  position: relative;
+}
+
+.retailrocket-subscribe-input-text:after,
+.retailrocket-subscribe-input-text:before {
+  position: absolute;
+  top: 0;
+
+  display: block;
+
+  width: 0;
+  height: 0;
+
+  content: '';
+
+  border-style: solid;
+}
+
+.retailrocket-subscribe-input-text:after {
+  right: -18px;
+
+  border-width: 36px 18px 0 0;
+  border-color: #000 transparent transparent;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-text #rr-500popup-email {
+  font-size: 15px;
+
+  display: block;
+
+  height: 36px;
+  padding: 11.5px 48px 11.5px 15px;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  color: #fff;
+  border: 0;
+  background: #000;
+}
+
+.retailrocket-subscribe-input-text:before {
+  left: -18px;
+
+  border-width: 0 0 36px 18px;
+  border-color: transparent transparent #000;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit #rr-500popup-btn {
+  font-size: 15px;
+
+  display: block;
+
+  height: 36px;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  color: #fff;
+  border: 0;
+  background-color: #e21836;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit {
+  position: relative;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit:before {
+  left: -18px;
+
+  border-width: 0 0 36px 18px;
+  border-color: transparent transparent #e21836;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit:after,
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit:before {
+  position: absolute;
+  top: 0;
+
+  display: block;
+
+  width: 0;
+  height: 0;
+
+  content: '';
+
+  border-style: solid;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form .retailrocket-subscribe-input-submit:after {
+  right: -18px;
+
+  border-width: 36px 18px 0 0;
+  border-color: #e21836 transparent transparent;
+}
+
+.retailrocket-subscribe-widget form.retailrocket-subscribe-form a.retailrocket-close {
+  line-height: 31px;
+
+  color: #232323;
+}
+
+.retailrocket input[type=checkbox] {
+  display: block;
+  float: left;
+
+  margin-top: 4px;
+  margin-right: 5px;
+
+  vertical-align: middle;
+}
+
+.retailrocket-subscribe-widget .retailrocket-subscribe-input-checkbox label {
+  display: table;
+}
+
+.retailrocket-subscribe-widget .retailrocket-subscribe-input-checkbox,
+.retailrocket-subscribe-widget .retailrocket-subscribe-info {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
+::-moz-placeholder {
+  font-size: 15px;
+}
+
+:-moz-placeholder {
+  font-size: 15px;
+}
+
+:-ms-input-placeholder {
+  font-size: 15px;
+}
+
+.retailrocket-theme form.retailrocket-subscribe-form a.retailrocket-close {
+  line-height: 31px;
+
+  color: #fff;
+}
+
+.retailrocket-notify-widget .retailrocket-widget {
+  background-color: #fff;
+}
+
+.retailrocket-notify-widget .retailrocket-widgettitle {
+  position: relative;
+}
+
+.retailrocket-notify-widget .retailrocket-widgettitle span {
+  font-family: 'Trebuchet MS';
+  font-size: 16px;
+  font-weight: 400;
+
+  position: relative;
+  left: -4px;
+
+  display: inline;
+
+  margin: 0;
+  padding: 0 10px;
+
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+
+  color: #000;
+}
+
+.retailrocket-notify-widget .widgettitle {
+  font: 25px/35px ITCAvantGardeGothicW10, Arial, sans-serif;
+
+  padding: 20px 0;
+
+  text-align: center;
+  letter-spacing: .5px;
+
+  color: #232323;
+}
+
+.retailrocket-notify-widget .items {
+  display: table;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.retailrocket-notify-widget .item {
+  position: relative;
+
+  display: inline-block;
+  float: left;
+
+  width: 240px;
+
+  list-style: none;
+
+  text-align: center;
+}
+
+.retailrocket-notify-widget .item .block {
+  padding: 15px;
+
+  border: 1px solid transparent;
+}
+
+.retailrocket-notify-widget .item:hover .block {
+  border-color: #ccc;
+}
+
+.retailrocket-notify-widget .item-label {
+  font: 9px/11px 'ITCAvantGardeGothicW10 Demi Bold', Arial, sans-serif;
+
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  padding: 2px 4px 1px;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: #000;
+}
+
+.retailrocket-notify-widget .item-label:after {
+  position: absolute;
+  top: 0;
+  right: -6px;
+
+  display: inline;
+
+  width: 0;
+  height: 0;
+
+  content: '';
+
+  border-width: 7px 3px;
+  border-style: solid;
+  border-color: #000 transparent transparent #000;
+}
+
+.retailrocket-notify-widget .item-image {
+  line-height: 180px;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 180px;
+}
+
+.retailrocket-notify-widget .item-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  margin: 0 auto;
+
+  vertical-align: middle;
+}
+
+.retailrocket-notify-widget a.item-info {
+  text-decoration: none;
+}
+
+.retailrocket-notify-widget .item-title {
+  font: 14px/16px 'ITCAvantGardeGothicW10 Demi Bold', Arial, sans-serif;
+  font-weight: 400;
+
+  overflow: hidden;
+
+  height: 43px;
+  margin: 5px 0;
+  margin-bottom: 10px;
+  padding: 0 0 10px;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #232323;
+  border-bottom: 1px solid #ccc;
+}
+
+.retailrocket-notify-widget .item-block-price {
+  margin-bottom: 10px;
+}
+
+.retailrocket-notify-widget .item-old-price {
+  font: 12px/19px 'AvantGardeGothicITC W10 Bold', Arial, sans-serif;
+
+  display: inline-block;
+
+  margin-bottom: 0;
+
+  text-decoration: line-through;
+  letter-spacing: 0;
+
+  color: #666;
+}
+
+.retailrocket-notify-widget .item-price {
+  font: 12px/19px 'AvantGardeGothicITC W10 Bold', Arial, sans-serif;
+
+  display: inline-block;
+
+  margin-bottom: 0;
+
+  letter-spacing: 0;
+
+  color: #666;
+}
+
+.retailrocket-notify-widget .item-price-currency {
+  font-family: 'Rouble'!important;
+
+  color: inherit;
+}
+
+.retailrocket-notify-widget .item-actions {
+  line-height: 27px;
+
+  display: none;
+
+  width: 100%;
+  margin-top: 5px;
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-more {
+  font-size: 15px;
+  font-weight: 400;
+
+  display: inline-block;
+
+  text-decoration: underline;
+
+  color: #0079bf;
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-more:hover {
+  text-decoration: underline;
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-more::after {
+  content: 'Подробнее';
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-buy {
+  font-size: 15px;
+  font-weight: 700;
+
+  display: inline-block;
+
+  margin-left: 20px;
+  padding: 5px 10px;
+
+  text-align: center;
+
+  color: #fff;
+  border-radius: 4px;
+  background-color: #388e3c;
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-buy:hover {
+  background-color: #489e4c;
+}
+
+.retailrocket-notify-widget .item-actions .item-actions-buy::after {
+  content: 'Купить';
+}
+
+@media screen and (max-width: 1000px) {
+  .retailrocket-subscribe-widget .retailrocket-subscribe-form > :first-child {
+    width: 100%;
+    margin: 0!important;
 
     text-align: right;
   }

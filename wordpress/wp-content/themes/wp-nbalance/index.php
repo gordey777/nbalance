@@ -21,29 +21,28 @@
         <?php endif; ?>
 
 
-        <div class="index__social">
-          <div class="social">
-            <div>
-              <span class="social__label">Поделиться</span>
-            </div>
-            <div>
-              <div class="social-likes social-likes_visible" data-counters="no">
-                <div class="social-likes__widget social-likes__widget_facebook" title="Поделиться ссылкой на Фейсбуке"><span class="social-likes__button social-likes__button_facebook"><span class="social-likes__icon social-likes__icon_facebook"></span></span>
-                </div>
-                <div class="social-likes__widget social-likes__widget_twitter" title="Поделиться ссылкой в Твиттере"><span class="social-likes__button social-likes__button_twitter"><span class="social-likes__icon social-likes__icon_twitter"></span></span>
-                </div>
-                <div class="social-likes__widget social-likes__widget_mailru" title="Поделиться ссылкой в Моём мире"><span class="social-likes__button social-likes__button_mailru"><span class="social-likes__icon social-likes__icon_mailru"></span></span>
-                </div>
-                <div class="social-likes__widget social-likes__widget_vkontakte" title="Поделиться ссылкой во Вконтакте"><span class="social-likes__button social-likes__button_vkontakte"><span class="social-likes__icon social-likes__icon_vkontakte"></span></span>
-                </div>
-                <div class="social-likes__widget social-likes__widget_odnoklassniki" title="Поделиться ссылкой в Одноклассниках"><span class="social-likes__button social-likes__button_odnoklassniki"><span class="social-likes__icon social-likes__icon_odnoklassniki"></span></span>
-                </div>
-                <div class="social-likes__widget social-likes__widget_plusone" title="Поделиться ссылкой в Гугл-плюсе"><span class="social-likes__button social-likes__button_plusone"><span class="social-likes__icon social-likes__icon_plusone"></span></span>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="index__social">
+      <div class="social">
+        <div>
+          <span class="social__label">Поделиться</span>
         </div>
+
+        <?php
+        $attr = array (
+
+
+            'display' => 'horizontal',
+            'alignment' => 'center',
+            'attr_id' => 'before_content_icons',
+            'attr_class' => 'before_content_soc_icons',
+            'selected_icons' => array ( '1', '2', '3', '4', '5', '6', '7', '8' )
+
+        );
+        if ( function_exists('cn_social_icon') ) echo cn_social_icon( $attr );
+        ?>
+
+      </div>
+    </div><!-- /.index__social -->
 
         <div class="offers">
           <div class="row collapse full-width">

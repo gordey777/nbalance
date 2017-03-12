@@ -628,6 +628,8 @@ body {
   }
 }
 
+
+
 .fancy_popup_block {
   font-family: 'ITCAvantGardeGothicW10', 'Arial', sans-serif;
   line-height: normal;
@@ -5894,6 +5896,7 @@ button.swiper-pagination-bullet {
         margin-bottom: 0;
       }
     }
+    &.footer_widget.widget_cnss_widget
     &.footer__social {
       text-align: center;
       .list {
@@ -6396,6 +6399,7 @@ only screen and (min-width: 768px) {
 
         height: auto;
       }
+      &.footer_widget.widget_cnss_widget,
       &.footer__social {
         text-align: left;
         .list {

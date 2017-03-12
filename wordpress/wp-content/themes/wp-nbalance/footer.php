@@ -3,17 +3,43 @@
     <div class="footer__fix"></div>
     <footer class="footer js-footer">
       <div class="footer__tools">
+
+
         <div class="site_center_wrapper">
           <ul class="footer__cols list">
-            <li class="footer__col list__item"><a href="shops.htm/"><span class="icon i_footer_pin"></span><span>НАЙТИ МАГАЗИН</span></a></li>
-            <li class="footer__col list__item"><a href="#"><span class="icon i_footer_nb"></span><span>ПОДАРОЧНЫЕ КАРТЫ</span></a></li>
-            <li class="footer__col list__item"><a href="#"><span class="icon i_footer_mynb"></span><span>Клуб LVb</span></a></li>
+
+            <?php if( have_rows('footer_icon_links', 20) ):
+            $i = 0;?>
+              <?php while ( have_rows('footer_icon_links', 20) ) : the_row();
+              if ($i == 0) {
+                $listClass = "i_footer_pin";
+              }
+              elseif ($i == 1) {
+                $listClass = "i_footer_nb";
+              }
+              elseif ($i == 2) {
+                $listClass = "i_footer_mynb";
+              }
+                ?>
+
+                      <li class="footer__col list__item">
+                        <a href="<?php the_sub_field('link'); ?>">
+                          <span class="icon <?php echo $listClass; ?>"></span>
+                          <span><?php the_sub_field('title'); ?></span>
+                        </a>
+                      </li>
+
+              <?php $i++;
+              endwhile; ?>
+            <?php endif; ?>
+
             <li class="footer__col list__item">
               <a href="#" onclick="return false;" class="js-subs-trigger"><span class="icon i_footer_subs"></span><span>подписка</span></a>
             </li>
           </ul>
         </div>
       </div>
+
       <div class="footer__subs js-subs" id="js-ow-subscribe-block" style="display: block; height: 305px;">
         <div class="footer__subs_inner js-ow-subscribe-success-hide js-subs-form-container">
           <div>
@@ -47,6 +73,7 @@
             <a href="#" onclick="return false;" class="footer__subs_close js-subs-close"><span class="icon i_close-big"></span></a>
           </div>
         </div>
+
         <div class="footer__subs footer__subs--accept js-subs-accept" style="display: none;" id="js-ow-subscribe-success">
           <div class="footer__subs_inner">
             <div>
@@ -55,49 +82,17 @@
             <a href="#" onclick="return false;" class="footer__subs_close js-subs-close"><span class="icon i_close-big"></span></a>
           </div>
         </div>
+
       </div>
+
+
       <div class="footer__menu js-footer-menu">
         <div class="site_center_wrapper">
           <ul class="footer__cols list">
-            <li class="footer__col list__item js-footer-menu-item">
-              <div class="list__item_head js-footer-menu-head">Нужна помощь</div>
-              <ul class="list js-footer-menu-list">
-                <li class="list__item"><a href="#">Напишите нам</a></li>
-                <li class="list__item"><a href="#">Частые вопросы</a></li>
-                <li class="list__item"><a href="#">Рекомендации по уходу</a></li>
-                <li class="list__item"><a href="#">Реквизиты</a></li>
-                <li class="list__item"><a href="#">Размерная сетка</a></li>
-                <li class="list__item"><a href="#">Сотрудничество</a></li>
-                <li class="list__item"><a href="#">Условия продажи Товаров New Balance</a></li>
-              </ul>
-            </li>
-            <li class="footer__col list__item js-footer-menu-item">
-              <div class="list__item_head js-footer-menu-head">Заказы</div>
-              <ul class="list js-footer-menu-list">
-                <li class="list__item"><a href="#">Доставка и оплата</a></li>
-                <li class="list__item"><a href="#">Возврат</a></li>
-                <li class="list__item"><a href="#">Гарантийные сроки</a></li>
-              </ul>
-            </li>
-            <li class="footer__col list__item js-footer-menu-item">
-              <div class="list__item_head js-footer-menu-head">О NEW BALANCE</div>
-              <ul class="list js-footer-menu-list">
-                <li class="list__item"><a href="#">История бренда</a></li>
-                <li class="list__item"><a href="#">Технологии</a></li>
-                <li class="list__item"><a href="#" target="_blank">Остерегайтесь подделок</a></li>
-                <li class="list__item"><a href="#" target="_blank">Вакансии</a></li>
-                <li class="list__item"><a href="#">Контакты</a></li>
-              </ul>
-            </li>
-            <li class="footer__col footer__social list__item js-footer-menu-item">
-              <div class="list__item_head js-footer-menu-head">БУДЬТЕ НА СВЯЗИ</div>
-              <ul class="list js-footer-menu-list">
-                <li class="list__item"><a href="#" class="js-social-link-fb" target="_blank"><span class="nbfont nb-i_footer_fb"></span></a></li>
-                <li class="list__item"><a href="#" class="js-social-link-vk" target="_blank"><span class=""><svg width="52" height="52" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g fill="#FFF" fill-rule="evenodd"><path d="M15 30c-2.074 0-4.022-.391-5.841-1.174a15.127 15.127 0 0 1-4.77-3.214 15.127 15.127 0 0 1-3.215-4.77C.391 19.021 0 17.073 0 15s.391-4.022 1.174-5.841a15.127 15.127 0 0 1 3.214-4.77 15.127 15.127 0 0 1 4.77-3.215C10.979.391 12.927 0 15 0s4.022.391 5.841 1.174c1.82.783 3.41 1.854 4.77 3.214a15.127 15.127 0 0 1 3.215 4.77C29.609 10.979 30 12.927 30 15s-.391 4.022-1.174 5.841a15.127 15.127 0 0 1-3.214 4.77 15.127 15.127 0 0 1-4.77 3.215C19.021 29.609 17.073 30 15 30zm0-28.444c-1.86 0-3.606.352-5.24 1.057a13.575 13.575 0 0 0-4.27 2.876A13.575 13.575 0 0 0 2.612 9.76c-.705 1.634-1.057 3.38-1.057 5.24 0 1.86.352 3.606 1.057 5.24a13.575 13.575 0 0 0 2.876 4.27 13.575 13.575 0 0 0 4.271 2.877c1.634.705 3.38 1.057 5.24 1.057 1.86 0 3.606-.352 5.24-1.057a13.575 13.575 0 0 0 4.27-2.876 13.575 13.575 0 0 0 2.877-4.271c.705-1.634 1.057-3.38 1.057-5.24 0-1.86-.352-3.606-1.057-5.24a13.575 13.575 0 0 0-2.876-4.27 13.575 13.575 0 0 0-4.271-2.877c-1.634-.705-3.38-1.057-5.24-1.057z"></path><path d="M16.505 15.876c-.382-.222-.913-.222-1.344-.222h-1.417v2.918h1.3c.482 0 1.095.035 1.51-.257.381-.256.597-.76.597-1.239 0-.445-.265-.977-.646-1.2zm-.534-2.492c.315-.24.48-.668.48-1.062 0-.428-.199-.84-.563-1.062-.382-.222-1.079-.17-1.527-.17h-.617v2.568h.817c.464 0 1.012.034 1.41-.274zm-.104 7.363H11V9h5.318c1.54 0 2.961.98 2.961 2.71 0 1.335-.745 2.25-1.696 2.534v.034c1.41.292 2.417 1.058 2.417 2.905 0 1.71-1.164 3.564-4.133 3.564z"></path></g></svg></span></a></li>
-                <li class="list__item"><a href="#" class="js-social-link-yt" target="_blank"><span class="nbfont nb-i_footer_yt"></span></a></li>
-                <li class="list__item"><a href="#" class="js-social-link-inst" target="_blank"><span class="nbfont nb-i_footer_inst"></span></a></li>
-              </ul>
-            </li>
+            <?php if ( is_active_sidebar('footer_widgetarea') ) : ?>
+              <?php dynamic_sidebar( 'footer_widgetarea' ); ?>
+            <?php endif; ?>
+
           </ul>
         </div>
       </div>
@@ -125,16 +120,8 @@
     $(document).ready(function(){
 
 $(".menu-mobile__inner li.menu-item").addClass("list__item");
-//$(".menu-mobile__inner li.menu-item-has-children a").addClass("js-menu-mobile-item");
-
-//$(".menu-mobile__inner li.menu-item a").clone().appendTo('.menu-mobile__inner .list__sub_back').;
-
-//$(".list__sub_back a").replaceWith("<span></span>").addClass();
-
-
-//$(".menu-mobile__inner .list__sub_back").parent("li.menu-item-has-children").addClass('FFFFFFFFFF');
-
-
+$(".footer_widget li.menu-item").addClass("list__item");
+$(".footer_widget ul.menu").addClass("list js-footer-menu-list");
 
   $("#main-slider").owlCarousel({
     items: 1,

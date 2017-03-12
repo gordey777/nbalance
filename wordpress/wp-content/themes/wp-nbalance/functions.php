@@ -205,18 +205,18 @@ if (function_exists('register_sidebar')) {
     'before_title' => '<h6>',
     'after_title' => '</h6>'
   ));
-  //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
-  /*
+
+
   register_sidebar(array(
-    'name' => __('Блок виджетов #2', 'wpeasy'),
+    'name' => __('Виджеты футера', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
-    'id' => 'widgetarea2',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h6>',
-    'after_title' => '</h6>'
+    'id' => 'footer_widgetarea',
+    'before_widget' => '<li id="%1$s" class="footer__col list__item js-footer-menu-item footer_widget %2$s">',
+    'after_widget' => '</li>',
+    'before_title' => '<div class="list__item_head js-footer-menu-head">',
+    'after_title' => '</div>'
   ));
-  */
+
 }
 
 //  Custom Excerpts
@@ -693,8 +693,8 @@ class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
     }
 }
 
-
-
+//Easy Social Icons
+add_filter('widget_text', 'do_shortcode');
 
 
 ?>
