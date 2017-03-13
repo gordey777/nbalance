@@ -2769,7 +2769,7 @@ ul.list.inline > .list__item + .list__item,
      -moz-appearance: none;
 }
 
-.site_container input[type='checkbox'],
+//.site_container input[type='checkbox'],
 .fancy_popup_block input[type='checkbox'] {
   display: none;
 }
@@ -10275,22 +10275,23 @@ only screen and (min-width: 768px) {
     }
   }
   .slide-content-wrapper {
-    height: 425px;
+    //height: 425px;
   }
   .slide-background-image {
     overflow: hidden;
 
     width: 100%;
-    height: 100%;
-    max-height: 275px;
+    //height: 100%;
+    height: 26vw;
 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto 100%;
     background-size: cover;
     img {
-      min-width: 100%;
-      height: 100%;
+      height: auto;
+      width: 100%;
+      min-height: 100%;
     }
   }
   .slide-content {

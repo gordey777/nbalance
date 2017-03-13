@@ -1,5 +1,5 @@
 <?php  /* Template Name: Home page */ get_header(); ?>
-      <div class="index">
+  <div class="index">
 
 
         <?php if( have_rows('main_slider' ) ): ?>
@@ -44,84 +44,39 @@
       </div>
     </div><!-- /.index__social -->
 
+      <?php if( have_rows('offers' ) ): ?>
         <div class="offers">
-          <div class="row collapse full-width">
-            <div class="small-12 medium-6 columns" id="bx_3485106786_26081">
-              <div class="offers__item">
-                <a href="#catalog/men/man_shoes/man_lifestyle/new_balance_991_5_miuk_yard_pack/?color_ref=lNuBJDuQ">
-                  <div class="offers__inner">
-                    <div class="offers__image" style="background-image: url(/<?php echo get_template_directory_uri(); ?>/img/NB_web_9915_594x339.jpg);"></div>
-                    <div class="offers__desc">
-                      <div class="offers__desc_inner">
-                        <h6>New Balance 991.5 MiUK Yard Pack</h6>
-                        <h5>Яркие и премиальные</h5>
-                        <div class="offers__desc_links">
-                          <span>Для него</span>
+          <div class="row">
+            <?php while ( have_rows('offers') ) : the_row(); ?>
+                <div class="small-12 medium-6 columns" id="bx_3485106786_26081">
+                  <div class="offers__item">
+                    <a href="<?php the_sub_field('link'); ?>">
+                      <div class="offers__inner">
+                        <div class="offers__image" <?php $image = get_sub_field('image'); if( !empty($image) ): ?>style="background-image: url(
+                                                    <?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"
+                                                      );"<?php endif; ?>></div>
+                        <div class="offers__desc">
+                          <div class="offers__desc_inner">
+                            <h6><?php the_sub_field('title'); ?></h6>
+                            <h5><?php the_sub_field('slogan'); ?></h5>
+                            <div class="offers__desc_links">
+                              <span><?php the_sub_field('link_title'); ?></span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
-                </a>
-              </div>
-            </div>
-            <div class="small-12 medium-6 columns" id="bx_3485106786_26082">
-              <div class="offers__item">
-                <a href="#catalog/women/women_shoes/women_lifestyle/new_balance_300_nb_grey/?color_ref=grey">
-                  <div class="offers__inner">
-                    <div class="offers__image" style="background-image: url(/<?php echo get_template_directory_uri(); ?>/img/NB_web_300_594x339.jpg);"></div>
-                    <div class="offers__desc">
-                      <div class="offers__desc_inner">
-                        <h6>New Balance 300 NB Grey</h6>
-                        <h5>Ретро-стиль и новейшие технологии</h5>
-                        <div class="offers__desc_links">
-                          <span>Для нее</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="row collapse full-width">
-            <div class="small-12 medium-6 columns" id="bx_3485106786_26543">
-              <div class="offers__item">
-                <a href="#catalog/men/man_shoes/man_lifestyle/new_balance_247_sport/?color_ref=Haki">
-                  <div class="offers__inner">
-                    <div class="offers__image" style="background-image: url(/<?php echo get_template_directory_uri(); ?>/img/NB_web_247_sport_594x339.jpg);"></div>
-                    <div class="offers__desc">
-                      <div class="offers__desc_inner">
-                        <h6>New Balance 247 Sport</h6>
-                        <h5>Комфорт в любых приключениях</h5>
-                        <div class="offers__desc_links">
-                          <span>Для него</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="small-12 medium-6 columns" id="bx_3485106786_26084">
-              <div class="offers__item">
-                <a href="#catalog/women/women_shoes/women_running/new_balance_vazee_prism_v2/?color_ref=BlackAndWhite">
-                  <div class="offers__inner">
-                    <div class="offers__image" style="background-image: url(/<?php echo get_template_directory_uri(); ?>/img/NB_web_Vazeev2_594x339.jpg);"></div>
-                    <div class="offers__desc">
-                      <div class="offers__desc_inner">
-                        <h6>New Balance Vazee Prism v2</h6>
-                        <h5>Максимальная скорость и устойчивость</h5>
-                        <div class="offers__desc_links">
-                          <span>Для нее</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
+                </div>
+
+
+            <?php  endwhile; ?>
+
           </div>
         </div>
+      <?php endif; ?>
+
+
 
         <div data-retailrocket-markup-block="5819ef1c65bf196ac8bb2ecb" initialized="true">
 
@@ -233,14 +188,8 @@
               foreach($posts as $post){
                             setup_postdata($post); ?>
                               <div class="slide-content-wrapper">
-                                <div class="slide-background-image">
-                                  <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <?php if ( has_post_thumbnail()) :
-                                      the_post_thumbnail('medium');
-                                    else: ?>
-                                      <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-                                    <?php endif; ?>
-                                  </a><!-- /post thumbnail -->
+                                <div class="slide-background-image" style="
+                                background-image: url(<?php the_post_thumbnail_url( array(400, 600) ); ?>);">
                                 </div>
                                 <div class="slide-content">
                                   <h5><?php the_title(); ?></h5>

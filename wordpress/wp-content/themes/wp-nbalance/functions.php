@@ -133,7 +133,7 @@ function wpeHeadMobileNav() {
     'link_after'      => '',
     'items_wrap'      => '<ul class="list">%3$s</ul>',
     'depth'           => 0,
-    'walker'          => new WPSE_78121_Sublevel_Walker
+    'walker'          => new Mob_Menu_Walker
     )
   );
 }
@@ -677,11 +677,9 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
-
-
 //WALKER FOR MOBILE MENU
 
-class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
+class Mob_Menu_Walker extends Walker_Nav_Menu
 {
     function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
@@ -696,5 +694,5 @@ class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
 //Easy Social Icons
 add_filter('widget_text', 'do_shortcode');
 
-
+add_theme_support( 'woocommerce' );
 ?>

@@ -23,14 +23,17 @@
 
       </div>
     </div>
+
+
   <?php endwhile; else: // If 404 page error ?>
-    <article>
+      <div>
+        <div class="row">
+          <div class="small-12 columns">
 
-      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-
-    </article>
+            <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
+          </div>
+        </div>
+      </div>
   <?php endif; ?>
 <?php get_footer(); ?>
 
-
-<?php get_footer(); ?>

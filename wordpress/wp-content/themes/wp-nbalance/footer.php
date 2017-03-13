@@ -46,27 +46,11 @@
             <h4>ПОДПИСКА НА РАССЫЛКУ</h4>
             <p>Получите эксклюзивные предложения и сообщения от New Balance.</p>
             <div class="footer__subs_form js-subs-form">
-              <form novalidate="novalidate">
-                <input type="hidden" name="sessid" id="sessid" value="7985288abca30b8f60efa5e206308e55">
-                <div class="form__row js-field-block">
-                  <input type="email" name="ow_subscribe_email" id="js-ow-subscribe-email" placeholder="Электронный адрес" required="" data-msg-required="Введите адрес" data-msg-email="Введите корректный адрес" aria-required="true">
-                  <div class="error js-field-error js-ow-subscribe-error" id="js-ow-subscribe-error">
-                  </div>
-                </div>
-                <!--div class="form__row">
-                        <input type="checkbox" id="js-subscribe_oferta" checked>
-                            <label for="js-subscribe_oferta" name="subscribe_oferta" class="footer_oferta">я согласен с условиями <a href="support/dogovor-oferty/" target="_blank">публичной оферты</a>.</label>
-                    </div-->
-                <div class="form__row js-field-block">
-                  <input class="checkinput termsNconditions" checked="" data-rule-required="1" data-msg-required="Необходимо прочесть и согласиться с условиями" type="checkbox" name="dwfrm_oferta_policyaccept" id="dwfrm_oferta_policyaccept" value="true" maxlength="2147483647" aria-required="true">
-                  <label for="dwfrm_oferta_policyaccept" class="footer_oferta">я согласен с условиями <a href="#" target="_blank">публичной оферты</a>.</label>
-                  <div class="error js-field-error" style="margin-top: 12px;">
-                  </div>
-                </div>
-                <div class="form__row">
-                  <button type="submit" id="js-ow-subscribe-submit" class="btn btn_st-1"><span>Подписка</span></button>
-                </div>
-              </form>
+
+
+<?php echo do_shortcode('[contact-form-7 id="13" title="Подписка"]'); ?>
+
+
             </div>
             <!--p><span>Подписавшись, я соглашаюсь с <a href="about/privacy-policy/">политикой конфиденциальности New Balance</a> и <a href="about/condition/">условиями</a>.</span>
             </p-->
@@ -132,12 +116,37 @@ $(".footer_widget ul.menu").addClass("list js-footer-menu-list");
   });
 
 
+  $("#product-slider").owlCarousel({
+    items: 1,
+    margin: 0,
+    dots: true,
+    nav: true,
+    navText: '',
+    center: true,
+  });
+
+
   $("#news-owl-carousel").owlCarousel({
-    items: 3,
+    items: 5,
     margin: 0,
     dots: false,
     nav: true,
     navText: '',
+        responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+
+        },
+        600:{
+            items:3,
+
+        },
+        1000:{
+            items:5,
+
+        }
+    }
   });
 
 });

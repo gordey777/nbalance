@@ -31,47 +31,64 @@
 
 
     <header class="header with-shadow" id="header">
-      <div class="promo js-promo">
-        <div class="promo__inner" id="bx_3218110189_19164">
-          <p>
-            Все заказы, поступившие до&nbsp;16:00 и подтвержденные нашим менеджером, доставляются по Москве на следующий день, по Санкт-Петербургу — через день.
-            <br>
-          </p>
-          <p>
-            Сроки доставки в другие регионы России вы можете уточнить у наших операторов по телефону&nbsp;
-            <nobr>8 (800) 500-10-11.</nobr>
-            <br>
-          </p>
-          <p>
-            При заказе от 10 000 рублей – доставка бесплатная!
-          </p> <a href="#orders/dostavka/">Подробнее &gt;</a>
-          <p></p>
-        </div>
-        <a href="javascript:void(0);" class="promo__close js-promo-close"><span class="icon i_close-big"></span></a>
-      </div>
+      <?php if( have_rows('promo_widget', 20 ) ): ?>
+        <div class="promo js-promo">
+          <div class="promo__inner" id="bx_3218110189_19164">
+            <?php while ( have_rows('promo_widget', 20) ) : the_row(); ?>
+              <?php the_sub_field('text'); ?>
 
+              <a href="<?php the_sub_field('link'); ?>">Подробнее &gt;</a>
+            <?php  endwhile; ?>
+
+          </div>
+          <a href="javascript:void(0);" class="promo__close js-promo-close"><span class="icon i_close-big"></span></a>
+        </div>
+      <?php endif; ?>
       <div class="metabar">
         <div class="metabar__info">
           <ul class="list inline">
-            <li class="list__item">
-              <a href="/?page_id=41" class="flag icon flag-rus"></a>
-            </li>
-            <li class="list__item">
-              <a href="shops.htm">
-                <span class="nbfont nb-i_header_pin"></span> Найти магазин
-              </a>
-            </li>
+            <?php if( have_rows('link_countries', 20 ) ): ?>
+              <?php while ( have_rows('link_countries', 20) ) : the_row(); ?>
+                <li class="list__item">
+                  <a href="<?php the_sub_field('link'); ?>" class="flag icon flag__acf" style="background: url(<?php the_sub_field('image'); ?>) no-repeat 0 0/16em 309.4em;"></a>
+                </li>
+
+              <?php  endwhile; ?>
+            <?php endif; ?>
+
+            <?php if( have_rows('link_shop', 20 ) ): ?>
+              <?php while ( have_rows('link_shop', 20) ) : the_row(); ?>
+                <li class="list__item">
+                  <a href="<?php the_sub_field('link'); ?>">
+                    <span class="nbfont nb-i_header_pin"></span> <?php the_sub_field('title'); ?>
+                  </a>
+                </li>
+              <?php  endwhile; ?>
+            <?php endif; ?>
+
           </ul>
         </div>
-        <div class="header_phone">
-          <a href="tel:8 800 500 10 11">+ 375 (29) 999-99-99</a> </div>
-        <div class="metabar__promo" id="js-text-promo-source">
-          <a href="#" class="js-promo-toggle">
-            <span>Бесплатная доставка при заказе от 10 000&nbsp;рублей</span>
-            <span class="nbfont nb-s-1"></span>
-            <span>Узнать больше</span>
-          </a>
-        </div>
+
+        <?php if( have_rows('phone', 20 ) ): ?>
+          <?php while ( have_rows('phone', 20) ) : the_row(); ?>
+            <div class="header_phone">
+              <a href="tel:<?php the_sub_field('link'); ?>"><?php the_sub_field('title'); ?></a>
+            </div>
+          <?php  endwhile; ?>
+        <?php endif; ?>
+
+
+        <?php if( have_rows('promo_widget', 20 ) ): ?>
+
+          <div class="metabar__promo" id="js-text-promo-source">
+            <a href="#" class="js-promo-toggle">
+              <?php while ( have_rows('promo_widget', 20) ) : the_row(); ?>
+                <?php the_sub_field('link_title'); ?>
+              <?php  endwhile; ?>
+            </a>
+          </div>
+        <?php endif; ?>
+
       </div>
 
 
@@ -103,24 +120,23 @@
           </div>
 
         <div>
-          <div id="bx_basketFKauiI" class="bx-basket bx-opener">
-            <!--'start_frame_cache_bx_basketFKauiI'-->
-            <div class="bx-hdr-profile">
-              <div class="minicart" id="js-small-basket-block">
-                <a class="mapshops" href="shops.htm">
-                  Магазины
-                </a>
-              </div><!--'end_frame_cache_bx_basketFKauiI'-->
-            </div>
-          </div>
-          <div class="account-menu">
-            <div class="phone-top"> <a href="tel:+3752999999999"><span> +375 (29)</span> 999-99-99</a> </div>
-          </div>
-          <div class="location">
-            <a href="#support/shops/">
-              <span class="nb-i_header_pin"></span>
-            </a>
-          </div>
+
+          <?php if( have_rows('link_shops', 20 ) ): ?>
+            <?php while ( have_rows('link_shops', 20) ) : the_row(); ?>
+              <div id="bx_basketFKauiI" class="bx-basket bx-opener">
+                <div class="bx-hdr-profile">
+                  <div class="minicart" id="js-small-basket-block">
+                    <a class="mapshops" href="<?php the_sub_field('link'); ?>">
+                      <?php the_sub_field('title'); ?>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            <?php  endwhile; ?>
+          <?php endif; ?>
+
+
           <div class="search-small js-header-search-open">
             <a href="#" onclick="return false;">
               <span class="nb-i_header_search"></span>

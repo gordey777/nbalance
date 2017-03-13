@@ -73,22 +73,16 @@
             while ($my_query->have_posts()) {
                 $my_query->the_post();
             ?>
-          <div class="slide-content-wrapper">
-            <div class="slide-background-image">
-              <a rel="nofollow" class="feature-img" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                <?php if ( has_post_thumbnail()) :
-                  the_post_thumbnail('medium');
-                else: ?>
-                  <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-                <?php endif; ?>
-              </a><!-- /post thumbnail -->
-            </div>
-            <div class="slide-content">
-              <h5><?php the_title(); ?></h5>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span>УЗНАТЬ БОЛЬШЕ</span></a>
-            </div>
-            <div class="slide-date"><?php the_time('j F, Y'); ?></div>
-          </div>
+                              <div class="slide-content-wrapper">
+                                <div class="slide-background-image" style="
+                                background-image: url(<?php the_post_thumbnail_url( array(400, 600) ); ?>);">
+                                </div>
+                                <div class="slide-content">
+                                  <h5><?php the_title(); ?></h5>
+                                  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span>УЗНАТЬ БОЛЬШЕ</span></a>
+                                </div>
+                                <div class="slide-date"><?php the_time('j F, Y'); ?></div>
+                              </div>
             <?php
             }
 
