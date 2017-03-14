@@ -5,8 +5,9 @@
       <div class="site__head_inner">
         <h1><?php the_title(); ?></h1>
       </div>
+      <?php edit_post_link(); ?>
     </div>
-<?php edit_post_link(); ?>
+
     <div class="account">
       <div class="row account__body">
         <div class="small-12 medium-8 large-8 medium-push-4 large-push-4 columns">

@@ -3,13 +3,35 @@
 @import 'style_add';
 @import 'template_styles';
 
-.acceptance-373 {
-  display: inline-block;
-  float: left;
-  .wpcf7-acceptance {
+
+.footer__subs_inner {
+  .wpcf7-response-output {
+    position: absolute;
+    top: 1px;
+    left: calc(50% - 150px);
+
+    width: 300px;
+
+    color: #fff;
+    background: #323232;
+  }
+  .acceptance-373 {
+    position: relative;
+
     display: inline-block;
+    float: left;
+    .wpcf7-acceptance {
+      position: absolute;
+      z-index: 9999;
+
+      display: inline-block;
+
+      opacity: 0;
+    }
   }
 }
+
+
 
 .flag__acf {
   width: 2.5em;
@@ -123,20 +145,18 @@
 .slider--fw .slide-background-image {
   height: 18vw;
 }
-  .site_container h5 {
-    font: 19px/25px 'AvantGardeGothicITC W10 Bold','Arial',sans-serif;
-  }
+.site_container h5 {
+  font: 19px/25px 'AvantGardeGothicITC W10 Bold','Arial',sans-serif;
+}
 @media (max-width: 600px) {
   .slider--fw .slide-background-image {
     height: 40vw;
   }
-
 }
 @media (max-width: 1000px) {
   .slider--fw .slide-background-image {
     height: 26vw;
   }
-
 }
 
 

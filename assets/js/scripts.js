@@ -20,4 +20,3 @@ if (typeof jQuery === 'undefined') {
 } else {
   console.log('jQuery has loaded');
 }
-// Place any jQuery/helper plugins in here.

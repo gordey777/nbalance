@@ -46,11 +46,7 @@
             <h4>ПОДПИСКА НА РАССЫЛКУ</h4>
             <p>Получите эксклюзивные предложения и сообщения от New Balance.</p>
             <div class="footer__subs_form js-subs-form">
-
-
-<?php echo do_shortcode('[contact-form-7 id="13" title="Подписка"]'); ?>
-
-
+              <?php echo do_shortcode('[contact-form-7 id="13" title="Подписка"]'); ?>
             </div>
             <!--p><span>Подписавшись, я соглашаюсь с <a href="about/privacy-policy/">политикой конфиденциальности New Balance</a> и <a href="about/condition/">условиями</a>.</span>
             </p-->
@@ -58,14 +54,14 @@
           </div>
         </div>
 
-        <div class="footer__subs footer__subs--accept js-subs-accept" style="display: none;" id="js-ow-subscribe-success">
-          <div class="footer__subs_inner">
-            <div>
-              <h4>СПАСИБО ЗА ПОДПИСКУ!</h4>
-            </div>
-            <a href="#" onclick="return false;" class="footer__subs_close js-subs-close"><span class="icon i_close-big"></span></a>
-          </div>
-        </div>
+<!--         <div class="footer__subs footer__subs--accept js-subs-accept" style="display: none;" id="js-ow-subscribe-success">
+  <div class="footer__subs_inner">
+    <div>
+      <h4>СПАСИБО ЗА ПОДПИСКУ!</h4>
+    </div>
+    <a href="#" onclick="return false;" class="footer__subs_close js-subs-close"><span class="icon i_close-big"></span></a>
+  </div>
+</div> -->
 
       </div>
 
@@ -100,65 +96,9 @@
   <?php wp_footer(); ?>
 
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
 
-$(".menu-mobile__inner li.menu-item").addClass("list__item");
-$(".footer_widget li.menu-item").addClass("list__item");
-$(".footer_widget ul.menu").addClass("list js-footer-menu-list");
-
-  $("#main-slider").owlCarousel({
-    items: 1,
-    margin: 0,
-    dots: true,
-    nav: false,
-
-  });
-
-
-  $("#product-slider").owlCarousel({
-    items: 1,
-    margin: 0,
-    dots: true,
-    nav: true,
-    navText: '',
-    center: true,
-  });
-
-
-  $("#news-owl-carousel").owlCarousel({
-    items: 5,
-    margin: 0,
-    dots: false,
-    nav: true,
-    navText: '',
-        responsiveClass:true,
-    responsive:{
-        0:{
-            items:1,
-
-        },
-        600:{
-            items:3,
-
-        },
-        1000:{
-            items:5,
-
-        }
-    }
-  });
-
-});
-  </script>
-
-
-<!--   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/swiper.jquery.min.js"></script> -->
-  <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.validate.min.js"></script>
-<!--   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/chosen.jquery.min.js"></script> -->
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.site_scripts.js"></script>
-<!--   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.min.js"></script> -->
-<!--   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script> -->
+
 
 
 </body>

@@ -5,18 +5,18 @@
       <div class="site__head_inner">
         <h1><?php the_title(); ?></h1>
       </div>
+      <?php edit_post_link(); ?>
     </div>
-<?php edit_post_link(); ?>
+
     <div class="account">
 
       <div class="row account__body">
         <div class="small-12 medium-8 large-8 medium-push-4 large-push-4 columns">
-          <div <?php post_class(); ?>>
+          <div <?php post_class(); ?> >
 
-              <?php the_content(); ?>
+             <?php the_content(); ?>
 
           </div>
-
 
           <div class="account__content">
               <?php echo do_shortcode('[contact-form-7 id="67" title="Contacts"]'); ?>
@@ -24,7 +24,6 @@
         </div>
 
           <?php get_sidebar(); ?>
-
 
       </div>
     </div>

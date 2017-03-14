@@ -1,12 +1,13 @@
 <?php get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if( get_field('title_bg') ) { ?>
-      <div class="site__title"  style="background-image: url(<?php the_field('title_bg'); ?>);">
-    <?php }
-    else { ?>
-      <div class="site__title"  style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/bg_content.jpg);">
-    <?php } ?>
+
+    <div class="site__title"  <?php if( get_field('title_bg') ) { ?>
+                                  style="background-image: url(<?php the_field('title_bg'); ?>);"
+                                <?php }
+                                else { ?>
+                                  style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/bg_content.jpg);"
+                                <?php } ?>>
       <div>
         <div class="row">
           <div class="small-12 columns">
